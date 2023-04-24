@@ -11,35 +11,35 @@
     <!-- Outer Div with timer and VHS button -->
     <div class="outer-container">
         <!-- Top Header Bar -->
-        <div class="Top-Bar">
+        <div class="Top-Bar" id="topBar">
             <button>View High Scores</button>
             <p>Timer:</p>
         </div>
-        <div class="Inner-Container">
+        <div class="Inner-Container" id="innerContainer">
         <!-- Inner Div -->
-            <header class="Quiz">
+            <header class="Quiz" id="quiz">
                 <h1>Welcome to the coding quiz</h1>
                 <p>To get started, click the start button</p>
                 <button> Start Quiz!</button>
             </header>
             <!-- Quiz Content -->
             <main>
-                <section class="Questions">
+                <section class="Questions" id="questions">
                     <h2>Question Head</h2>
                     <ul>
-                        <li><button>Choice A</button></li>
-                        <li><button>Choice B</button></li>
-                        <li><button>Choice C</button></li>
+                        <li data-number="1"><button>Choice A</button></li>
+                        <li data-number="2"><button>Choice B</button></li>
+                        <li data-number="3"><button>Choice C</button></li>
                     </ul>
                 </section>
-                <section class="Quiz-finish">
+                <section class="Quiz-finish" id="quizFinish">
                     <h2>All Done!</h2>
                     <p> Your Final Score is: 00</p>
                     <label for="">Enter Initals: </label>
                     <input type="text">
                     <button>Submit</button>
                 </section>
-                <section class="High-Score"> 
+                <section class="High-Score" id="highScore"> 
                     <h2>Highscores:</h2>
                         <ol>
                             <li>MP - 10</li>
@@ -54,6 +54,6 @@
             </main>
         </div>
     </div>
-    
+    <script src = "assets/script.js"></script>
 </body>
 </html>
