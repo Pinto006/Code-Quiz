@@ -58,7 +58,7 @@ li {
 }
 
 .Quiz, main {
-    display: none;
+    display: block;
     margin-bottom: 30vh;
     margin-left: 10%;
     margin-right: 10%;
@@ -91,7 +91,7 @@ main {
 }
 
 .High-Score {
-    display: block;
+    display: none;
 }
 
 .High-Score ol {

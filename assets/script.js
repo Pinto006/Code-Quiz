@@ -2,8 +2,8 @@ const quiz = documnet.getElementbyID("#quiz");
 const choices = Array.from(documnet.querySelectorAll("Questions"));
 const results = document.getElementById('quizFinish');
 const highScores = document.getElementById('highScore');
-
-var currentQuestion = {};
+let lastQuestionIndex = questions.length -1;
+var currentQuestion = 0;
 var acceptingAnswers = true;
 var score = 0;
 var questionCounter = 0
