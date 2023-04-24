@@ -20,13 +20,13 @@ p {
 
 button {
     outline: none;
-    background-color: black;
+    background-color: rgb(228, 122, 56);
     /* color: white; */
     font-size: 1.3em;
 }
 
 h1, h2 {
-    color: Blue;
+    color: white;
     text-align: center;
 }
 
@@ -47,7 +47,7 @@ li {
 }
 
 .Inner-Container {
-    background: rgba(0, 0, 0, 0.5);
+    background-color: coral;
     /* background-color: black; */
     height: 100%;
     width: 50%;
@@ -62,7 +62,7 @@ li {
     margin-bottom: 30vh;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: olivedrab;
+    background-color: rgb(228, 122, 56);
 }
 
 
@@ -71,8 +71,8 @@ li {
 }
 
 .Quiz button {
-    display: none; 
-    /* block */
+    display: block; 
+    background-color: rgb(195, 220, 241);
     margin: 0 auto;
 }
 
