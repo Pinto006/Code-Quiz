@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: monospace;
+    font-family: 'Dosis',monospace;
     /* border: 1px solid green;  */
     color: white;
 }
@@ -71,7 +71,8 @@ li {
 }
 
 .Quiz button {
-    display: block;
+    display: none; 
+    /* block */
     margin: 0 auto;
 }
 
