@@ -1,12 +1,14 @@
-const quiz = documnet.getElementbyID("#quiz");
-const choices = Array.from(documnet.querySelectorAll("Questions"));
+const quiz = document.getElementById("quiz");
+var timeEL = document.querySelector(".game-clock");
+var startBtn = document.getElementById("start-btn");
+const choices = Array.from(document.querySelectorAll("Questions"));
 const results = document.getElementById('quizFinish');
 const highScores = document.getElementById('highScore');
-let lastQuestionIndex = questions.length -1;
 var currentQuestion = 0;
 var acceptingAnswers = true;
 var score = 0;
 var questionCounter = 0
+var secondsLeft = 60;
 var availableQuestion = [];
 var questions = [
     {
@@ -50,33 +52,56 @@ var questions = [
 
     }
 ];
-
+var arrayQuestions 
+let lastQuestionIndex = questions.length -1;
 var maxQuestions = 4;
 var points = 100;
 
 //start quiz button
 
+startBtn.addEventListener("click", startGame);
+
+
 //generate quiz
 function startGame() {
+    console.log("clicked");
+    arrayQuestions = questions.values[0];
+    setTime();
     questionCounter = 0;
     score = 0;
-    availableQuestion = [...question];
-    getNextQuestions()
-}
+ }
 
 //countdown timer
+function setTime() {
+    // Sets interval in variable
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+  
+      if(secondsLeft === 0) {
+        // Stops execution of action at set interval
+        clearInterval(timerInterval);
+        // Calls function to create and append image
+        sendMessage();
+      }
+  
+    }, 1000);
+  }
 
+  function sendMessage() {
+    timeEl.textContent = "Time's Up! Try Again!";   
+  }
 //display questions
-function showQuestions() 
+// function showQuestions() 
      
-//show results
+// //show results
 
-function showResults()
+// function showResults()
 	
 	
 
 //submit initals button
-submitButton.addEventListener('click', ShowResults);
+// submitButton.addEventListener('click', ShowResults);
 
 //VHS button
 
