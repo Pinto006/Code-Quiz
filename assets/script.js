@@ -61,7 +61,7 @@ var points = 100;
 
 startBtn.addEventListener("click", startGame);
 
-
+setTime();
 //generate quiz
 function startGame() {
     console.log("clicked");
@@ -76,7 +76,7 @@ function setTime() {
     // Sets interval in variable
     var timerInterval = setInterval(function() {
       secondsLeft--;
-      timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+    //   timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
   
       if(secondsLeft === 0) {
         // Stops execution of action at set interval
