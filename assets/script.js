@@ -1,4 +1,4 @@
-const quiz = document.getElementById("quiz");
+const quizEl = document.getElementById("quiz");
 var quizContent = document.querySelector(".Questions");
 var timeEl = document.querySelector("#game-clock");
 var question = document.querySelector("#question");
@@ -61,6 +61,8 @@ function startGame() {
     score = 0;
     // currentQuestion++ 
     // displayQuestion(currentQuestion);
+    quizEl.remove();
+    quizContent.style.display = "block";
     displayQuestion();
    
  }
@@ -78,50 +80,51 @@ function setTime() {
     sendMessage();
     }
  }
+//attempt one to display the questions.//
+ function displayQuestion(currentIndex) {
+    quiz.style.display = "none";
+    quizContent.style.display = "block";
+    for (var i = 1; i < questions.length; i++) {
+    question.textContent=questions[i].question;
+    choiceA.textContent=questions[currentIndex].answers.a;
+    choiceB.textContent=questions[currentIndex].answers.b;
+    choiceC.textContent=questions[currentIndex].answers.c;
+        choiceA.addEventListener("click", function(){
+        console.log("clicked A")
+       displayQuestion(i)
+       console.log(i)
+    });}
+ }
 
-//  function displayQuestion(currentIndex) {
-//     quiz.style.display = "none";
-//     quizContent.style.display = "block";
-//     for (var i = 1; i < questions.length; i++) {
-//     question.textContent=questions[i].question;
-//     choiceA.textContent=questions[currentIndex].answers.a;
-//     choiceB.textContent=questions[currentIndex].answers.b;
-//     choiceC.textContent=questions[currentIndex].answers.c;
-//         choiceA.addEventListener("click", function(){
-//         console.log("clicked A")
-//        displayQuestion(i)
-//        console.log(i)
-//     });}
-//  }
-function displayQuestion(q) {
-    let titleDiv = document.getElementById('title');
+ //attempt two to display questions.//
+// function displayQuestion(questions) {
+//     let titleDiv = document.getElementById('title');
+//     for(let i =0; i < questions.length; i++) {
+//     titleDiv.textContent = questions[i].head};
+//     let opts = document.querySelectorAll('.options'); 
+//     opts.forEach(function(element, index){
+//         element.textContent = questions.options[index];
 
-//modify it
-    titleDiv.textContent = q.head[0];
-    let opts = document.querySelectorAll('.options'); 
-    opts.forEach(function(element, index){
-        element.textContent = q.options[index];
+//         element.addEventListener('click', function(){
+//             //checking answer
+//             if(questions.correctAnswer === index) { 
+//             }
+//             else {
 
-        element.addEventListener('click', function(){
-            //checking answer
-            if(q.correctAnswer === index) { 
-            }
-            else {
-
-            }
-        })
-    });
-}
+//             }
+//         })
+//     });
+// }
 // displayQuestion(question);
 
-function displayScore() {
+// function displayScore() {
 
-}
+// }
 
   function sendMessage() {
     timeEl.textContent ="Time's Up! Try Again!";   
   }
-//display questions
+
 // function showQuestions() 
      
 // //show results
@@ -136,5 +139,5 @@ function displayScore() {
 //VHS button
 
 
-// startGame();
+
 

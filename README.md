@@ -8,11 +8,11 @@ This is a JavaScript Coding Quiz that includes 4 multiple choice questions, a ti
 
 Code Quiz URL: https://pinto006.github.io/Code-Quiz/
 
-Screenshot
+![Alt text](images/ScreenShot.png)
 
 ## Usage
 
-Once the page loads click the "Start Quiz" button.  The timer will start and the first question will appear.  When all four questions are answered, a score will appear.  A box for the user to to submit thier initals will also appear. 
+Once the page loads click the "Start Quiz" button.  The timer will start and the first question will appear.  When all four questions are answered, a score will appear.  A box for the user to to submit their initals will also appear. The user can also view the high scores at anytime by clicking the button at the top left corner.  
 
 ## License
 

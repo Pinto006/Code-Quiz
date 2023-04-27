@@ -86,11 +86,9 @@ main {
     margin: 0 right;
 }
 
-/* Questions */
-
-/* .Questions {
-    display: none;
-} */
+.Questions {
+    display: block;
+}
 
 .Quiz-finish {
     display: none;
