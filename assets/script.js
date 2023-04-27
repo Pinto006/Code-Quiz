@@ -1,7 +1,11 @@
 const quiz = document.getElementById("quiz");
-var timeEL = document.querySelector(".game-clock");
+var timeEl = document.querySelector("#game-clock");
+var question = document.querySelector("#question");
+var choiceA = document.querySelector("#choiceA");
+var choiceB = document.querySelector("#choiceB");
+var choiceC = document.querySelector("#choiceC");
 var startBtn = document.getElementById("start-btn");
-const choices = Array.from(document.querySelectorAll("Questions"));
+const choices = document.querySelectorAll("#options");
 const results = document.getElementById('quizFinish');
 const highScores = document.getElementById('highScore');
 var currentQuestion = 0;
@@ -18,7 +22,7 @@ var questions = [
             b: 'let',
             c: 'Both A and B'
         },
-        correctAnswer: 'c'
+        correctAnswer: 'Both A and B'
 
     },
     {
@@ -28,7 +32,7 @@ var questions = [
             b: 'getElementsByClassName()',
             c: 'Both A and B'
         },
-        correctAnswer: 'c'
+        correctAnswer: 'Both A and B'
 
     },
     {
@@ -38,7 +42,7 @@ var questions = [
             b: 'Gives a warning',
             c: 'Throws an error',
         },
-        correctAnswer: 'a'
+        correctAnswer: 'Ignores the statements'
 
     },
     {
@@ -48,48 +52,54 @@ var questions = [
             b: 'window.alert()',
             c: 'All the Above'
         },
-        correctAnswer: 'c'
+        correctAnswer: 'All the Above'
 
     }
 ];
 var arrayQuestions 
 let lastQuestionIndex = questions.length -1;
 var maxQuestions = 4;
-var points = 100;
+var timerId;
 
 //start quiz button
 
 startBtn.addEventListener("click", startGame);
 
-setTime();
+// setTime();
 //generate quiz
 function startGame() {
     console.log("clicked");
     arrayQuestions = questions.values[0];
-    setTime();
+    timerId = setInterval (setTime, 1000);
     questionCounter = 0;
     score = 0;
+    // currentQuestion++ 
+    displayQuestion(currentQuestion);
  }
 
 //countdown timer
 function setTime() {
     // Sets interval in variable
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-    //   timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
+    secondsLeft--;
+    timeEl.textContent =`Time: ${secondsLeft}`;
   
-      if(secondsLeft === 0) {
+    if(secondsLeft <= 0) {
         // Stops execution of action at set interval
-        clearInterval(timerInterval);
+    clearInterval(timerId);
         // Calls function to create and append image
-        sendMessage();
-      }
-  
-    }, 1000);
-  }
+    sendMessage();
+    }
+ }
+
+ function displayQuestion(currentIndex) {
+    question.textContent=questions[currentIndex].question;
+    choiceA.textContent=questions[currentIndex].answers.a;
+    choiceB.textContent=questions[currentIndex].answers.b;
+    choiceC.textContent=questions[currentIndex].answers.c;
+ }
 
   function sendMessage() {
-    timeEl.textContent = "Time's Up! Try Again!";   
+    timeEl.textContent ="Time's Up! Try Again!";   
   }
 //display questions
 // function showQuestions() 
@@ -106,5 +116,5 @@ function setTime() {
 //VHS button
 
 
-startGame();
+// startGame();
 
