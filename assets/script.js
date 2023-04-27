@@ -1,4 +1,5 @@
 const quiz = document.getElementById("quiz");
+var quizContent = document.querySelector(".Questions");
 var timeEl = document.querySelector("#game-clock");
 var question = document.querySelector("#question");
 var choiceA = document.querySelector("#choiceA");
@@ -8,6 +9,7 @@ var startBtn = document.getElementById("start-btn");
 const choices = document.querySelectorAll("#options");
 const results = document.getElementById('quizFinish');
 const highScores = document.getElementById('highScore');
+var answerbutton = document.createElement('button');
 var currentQuestion = 0;
 var acceptingAnswers = true;
 var score = 0;
@@ -64,6 +66,7 @@ var timerId;
 //start quiz button
 
 startBtn.addEventListener("click", startGame);
+quizContent.style.display = "none";
 
 // setTime();
 //generate quiz
@@ -75,6 +78,7 @@ function startGame() {
     score = 0;
     // currentQuestion++ 
     displayQuestion(currentQuestion);
+   
  }
 
 //countdown timer
@@ -92,12 +96,18 @@ function setTime() {
  }
 
  function displayQuestion(currentIndex) {
+    quiz.style.display = "none";
+    quizContent.style.display = "block";
     question.textContent=questions[currentIndex].question;
     choiceA.textContent=questions[currentIndex].answers.a;
     choiceB.textContent=questions[currentIndex].answers.b;
     choiceC.textContent=questions[currentIndex].answers.c;
-
+    choiceA.addEventListener("click", displayQuestion++);
  }
+
+function displayScore() {
+
+}
 
   function sendMessage() {
     timeEl.textContent ="Time's Up! Try Again!";   

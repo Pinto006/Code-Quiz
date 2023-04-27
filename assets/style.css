@@ -80,11 +80,17 @@ main {
     display: block;
 }
 
+#options button {
+    display: block; 
+    background-color: rgb(87, 56, 113);
+    margin: 0 right;
+}
+
 /* Questions */
 
-.Questions {
+/* .Questions {
     display: none;
-}
+} */
 
 .Quiz-finish {
     display: none;
