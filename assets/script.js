@@ -98,11 +98,16 @@ function setTime() {
  function displayQuestion(currentIndex) {
     quiz.style.display = "none";
     quizContent.style.display = "block";
-    question.textContent=questions[currentIndex].question;
+    for (var i = 1; i < questions.length; i++) {
+    question.textContent=questions[i].question;
     choiceA.textContent=questions[currentIndex].answers.a;
     choiceB.textContent=questions[currentIndex].answers.b;
     choiceC.textContent=questions[currentIndex].answers.c;
-    choiceA.addEventListener("click", displayQuestion++);
+        choiceA.addEventListener("click", function(){
+        console.log("clicked A")
+       displayQuestion(i)
+       console.log(i)
+    });}
  }
 
 function displayScore() {
