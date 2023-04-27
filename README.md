@@ -6,7 +6,7 @@ This is a JavaScript Coding Quiz that includes 4 multiple choice questions, a ti
 
 ## Installation
 
-Code Quiz URL: 
+Code Quiz URL: https://pinto006.github.io/Code-Quiz/
 
 Screenshot
 

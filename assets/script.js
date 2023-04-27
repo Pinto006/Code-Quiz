@@ -96,6 +96,7 @@ function setTime() {
     choiceA.textContent=questions[currentIndex].answers.a;
     choiceB.textContent=questions[currentIndex].answers.b;
     choiceC.textContent=questions[currentIndex].answers.c;
+
  }
 
   function sendMessage() {
