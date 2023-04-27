@@ -18,45 +18,28 @@ var secondsLeft = 60;
 var availableQuestion = [];
 var questions = [
     {
-        question: "Which of the following keywords is used to define a variable in Javascript?",
-        answers: {
-            a: 'var',
-            b: 'let',
-            c: 'Both A and B'
-        },
-        correctAnswer: 'Both A and B'
+        head: "Which of the following keywords is used to define a variable in Javascript?",
+        options: ['var', 'let', 'Both A and B'],
+        correctAnswer: 3
+     },
+        
+    {
+        head:  "Which of the following methods is used to access HTML elements using Javascript?",
+        options: ['getElementbyId()','getElementsByClassName()', 'Both A and B'],
+        correctAnswer: 3
 
     },
     {
-        question: "Which of the following methods is used to access HTML elements using Javascript?",
-        answers: {
-            a: 'getElementbyId()',
-            b: 'getElementsByClassName()',
-            c: 'Both A and B'
+        head: "Upon encountering empty statements, what does the Javascript Interpreter do?",
+        options: ['Ignores the statements', 'Gives a warning','Throws an error'],
+        correctAnswer: 1
         },
-        correctAnswer: 'Both A and B'
-
-    },
+        
     {
-        question: "Upon encountering empty statements, what does the Javascript Interpreter do?",
-        answers: {
-            a: 'Ignores the statements',
-            b: 'Gives a warning',
-            c: 'Throws an error',
+        head: "Which of the following methods can be used to display data in some form using Javascript?",
+        options: ['console.log()', 'window.alert()','All the Above'],
+        correctAnswer: 3
         },
-        correctAnswer: 'Ignores the statements'
-
-    },
-    {
-        question: "Which of the following methods can be used to display data in some form using Javascript?",
-        answers: {
-            a: 'console.log()',
-            b: 'window.alert()',
-            c: 'All the Above'
-        },
-        correctAnswer: 'All the Above'
-
-    }
 ];
 var arrayQuestions 
 let lastQuestionIndex = questions.length -1;
@@ -77,7 +60,8 @@ function startGame() {
     questionCounter = 0;
     score = 0;
     // currentQuestion++ 
-    displayQuestion(currentQuestion);
+    // displayQuestion(currentQuestion);
+    displayQuestion();
    
  }
 
@@ -95,20 +79,40 @@ function setTime() {
     }
  }
 
- function displayQuestion(currentIndex) {
-    quiz.style.display = "none";
-    quizContent.style.display = "block";
-    for (var i = 1; i < questions.length; i++) {
-    question.textContent=questions[i].question;
-    choiceA.textContent=questions[currentIndex].answers.a;
-    choiceB.textContent=questions[currentIndex].answers.b;
-    choiceC.textContent=questions[currentIndex].answers.c;
-        choiceA.addEventListener("click", function(){
-        console.log("clicked A")
-       displayQuestion(i)
-       console.log(i)
-    });}
- }
+//  function displayQuestion(currentIndex) {
+//     quiz.style.display = "none";
+//     quizContent.style.display = "block";
+//     for (var i = 1; i < questions.length; i++) {
+//     question.textContent=questions[i].question;
+//     choiceA.textContent=questions[currentIndex].answers.a;
+//     choiceB.textContent=questions[currentIndex].answers.b;
+//     choiceC.textContent=questions[currentIndex].answers.c;
+//         choiceA.addEventListener("click", function(){
+//         console.log("clicked A")
+//        displayQuestion(i)
+//        console.log(i)
+//     });}
+//  }
+function displayQuestion(q) {
+    let titleDiv = document.getElementById('title');
+
+//modify it
+    titleDiv.textContent = q.head[0];
+    let opts = document.querySelectorAll('.options'); 
+    opts.forEach(function(element, index){
+        element.textContent = q.options[index];
+
+        element.addEventListener('click', function(){
+            //checking answer
+            if(q.correctAnswer === index) { 
+            }
+            else {
+
+            }
+        })
+    });
+}
+// displayQuestion(question);
 
 function displayScore() {
 
