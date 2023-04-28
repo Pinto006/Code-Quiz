@@ -1,7 +1,7 @@
 const quizEl = document.getElementById("quiz");
 var quizContent = document.querySelector(".Questions");
 var timeEl = document.querySelector("#game-clock");
-var question = document.querySelector("#question");
+var question = document.querySelector("#title");
 var choiceA = document.querySelector("#choiceA");
 var choiceB = document.querySelector("#choiceB");
 var choiceC = document.querySelector("#choiceC");
@@ -63,7 +63,7 @@ function startGame() {
     // displayQuestion(currentQuestion);
     quizEl.remove();
     quizContent.style.display = "block";
-    displayQuestion();
+    displayQuestion(currentQuestion);
    
  }
 
@@ -82,19 +82,19 @@ function setTime() {
  }
 //attempt one to display the questions.//
  function displayQuestion(currentIndex) {
-    quiz.style.display = "none";
+    quizEl.style.display = "none";
     quizContent.style.display = "block";
-    for (var i = 1; i < questions.length; i++) {
-    question.textContent=questions[i].question;
-    choiceA.textContent=questions[currentIndex].answers.a;
-    choiceB.textContent=questions[currentIndex].answers.b;
-    choiceC.textContent=questions[currentIndex].answers.c;
+    
+    question.textContent=questions[currentIndex].head;
+    choiceA.textContent=questions[currentIndex].options[0];
+    choiceB.textContent=questions[currentIndex].options[1];
+    choiceC.textContent=questions[currentIndex].options[2];
+    // choiceB.textContent=questions[currentIndex].answers.b;
+    // choiceC.textContent=questions[currentIndex].answers.c;
         choiceA.addEventListener("click", function(){
         console.log("clicked A")
-       displayQuestion(i)
-       console.log(i)
+    //    displayQuestion(i)
     });}
- }
 
  //attempt two to display questions.//
 // function displayQuestion(questions) {
