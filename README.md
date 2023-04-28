@@ -8,7 +8,7 @@ This is a JavaScript Coding Quiz that includes 4 multiple choice questions, a ti
 
 Code Quiz URL: https://pinto006.github.io/Code-Quiz/
 
-![Alt text](images/ScreenShot.png)
+![Alt text](images/Screenshot.png)
 
 ## Usage
 
